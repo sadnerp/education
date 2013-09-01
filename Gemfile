@@ -24,7 +24,8 @@ group :assets do
 end
 
 gem 'jquery-rails'
-gem 'bootstrap3-rails'
+#gem 'bootstrap3-rails'
+gem 'anjlab-bootstrap-rails', '>= 3.0.0.0', :require => 'bootstrap-rails'
 
 group :test do
 	gem 'capybara', '1.1.2'

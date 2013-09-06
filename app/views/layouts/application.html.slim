@@ -6,7 +6,7 @@ html
 		= stylesheet_link_tag    "application", :media => "all"
 		= javascript_include_tag "application"
 		= csrf_meta_tags
-		/[if lt IE 9]><script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script><![endif]
+		/![if lt IE 9]><script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script><![endif]
 	body
 		/ navigation
 		= render "layouts/header"
@@ -14,5 +14,6 @@ html
 		/ content
 		.container
 			= yield
-			/ footer
-			= render "layouts/footer"
+
+		/ footer
+		= render "layouts/footer"

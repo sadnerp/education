@@ -8,10 +8,15 @@ nav.navbar.navbar-inverse role="navigation"
 		= link_to "Образование #", root_path, id: "logo", class: "navbar-brand"
 
 	.collapse.navbar-collapse.navbar-ex1-collapse
-		ul.nav.navbar-nav
-			li
-				= link_to "Помощь", help_path
-		p.navbar-text.pull-right
-			= link_to "Войти", "#", class: "navbar-link"
-			|  или 
-			= link_to "Зарегистрироваться", signup_path, class: "navbar-link"
+		ul.nav.navbar-nav.navbar-right
+			li = link_to "Помощь", help_path
+			- if signed_in?
+				li.dropdown.active
+					a.dropdown-toggle href="#" data-toggle="dropdown"
+						= current_user.name
+						|  
+						b.caret
+					ul.dropdown-menu
+						li = link_to "Выход", signout_path, method: "delete"
+			- else
+				li.active = link_to "Войти", signin_path

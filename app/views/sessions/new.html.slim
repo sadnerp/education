@@ -1,0 +1,16 @@
+= provide(:title, "Войти")
+h1 Вход
+.row
+	.col-lg-6.col-lg-offset-3
+		= form_for(:session, url: sessions_path) do |f|
+			.form-group
+				= f.label :email
+				= f.text_field :email, class: "form-control"
+			.form-group
+				= f.label :password
+				= f.text_field :password, class: "form-control", type: "password"
+			.form-group
+				= f.submit "Войти", class: "btn btn-primary form-control"
+		p
+			| Новый пользователь? 
+			= link_to "Зарегистрироваться", signup_path

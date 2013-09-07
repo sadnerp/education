@@ -1,8 +1,7 @@
 doctype html
 html
 	head
-		title
-			= title(yield(:title))
+		title = title(yield(:title))
 		= stylesheet_link_tag    "application", :media => "all"
 		= javascript_include_tag "application"
 		= csrf_meta_tags
@@ -13,7 +12,12 @@ html
 
 		/ content
 		.container
+			- flash.each do |key, value|
+				.alert{class = "alert-#{key}"}
+					button.close type="button" data-dismiss="alert" aria-hidden="true" &times; 
+					p = value
 			= yield
 
 		/ footer
 		= render "layouts/footer"
+		= debug(params) if Rails.env.development?

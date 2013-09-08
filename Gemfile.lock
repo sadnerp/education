@@ -1,6 +1,6 @@
 GIT
   remote: git://github.com/anjlab/bootstrap-rails.git
-  revision: a4e33463d3689443702c5868dafea4a1a92e439e
+  revision: 1f66a91f05b5d6a657d46501332ed8c9f680c531
   specs:
     anjlab-bootstrap-rails (3.0.0.2)
       railties (>= 3.0)
@@ -39,6 +39,7 @@ GEM
     annotate (2.5.0)
       rake
     arel (3.0.2)
+    bcrypt-ruby (3.0.1)
     bcrypt-ruby (3.0.1-x86-mingw32)
     builder (3.0.4)
     capybara (1.1.2)
@@ -60,6 +61,8 @@ GEM
     diff-lcs (1.1.3)
     erubis (2.7.0)
     execjs (2.0.1)
+    faker (1.0.1)
+      i18n (~> 0.4)
     ffi (1.9.0)
     ffi (1.9.0-x86-mingw32)
     hike (1.2.3)
@@ -74,7 +77,7 @@ GEM
       treetop (~> 1.4.8)
     mime-types (1.25)
     mini_portile (0.5.1)
-    multi_json (1.7.9)
+    multi_json (1.8.0)
     nokogiri (1.6.0)
       mini_portile (~> 0.5.0)
     nokogiri (1.6.0-x86-mingw32)
@@ -151,6 +154,9 @@ GEM
       execjs (>= 0.3.0)
       multi_json (~> 1.0, >= 1.0.2)
     websocket (1.0.7)
+    will_paginate (3.0.3)
+    will_paginate-bootstrap (0.2.4)
+      will_paginate (>= 3.0.3)
     xpath (0.1.4)
       nokogiri (~> 1.3)
 
@@ -163,6 +169,7 @@ DEPENDENCIES
   bcrypt-ruby (= 3.0.1)
   capybara (= 1.1.2)
   coffee-rails
+  faker (= 1.0.1)
   jquery-rails
   pg (= 0.12.2)
   rails (= 3.2.13)
@@ -171,3 +178,5 @@ DEPENDENCIES
   slim
   sqlite3
   uglifier
+  will_paginate (= 3.0.3)
+  will_paginate-bootstrap

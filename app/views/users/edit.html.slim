@@ -1,0 +1,26 @@
+= provide(:title, "Изменить профиль")
+
+
+.row
+	aside.col-lg-3
+			section
+				= gravatar_for(@user, size: 150)
+    			a href="http://gravatar.com/emails" изменить
+	.col-lg-6
+		h1 Изменить профиль
+		= form_for(@user) do |f|
+			= render 'shared/error_messages'
+			.form-group
+				= f.label		:name
+				= f.text_field	:name, class: "form-control"
+			.form-group
+				= f.label		:email
+				= f.text_field	:email, class: "form-control"
+			.form-group
+				= f.label			:password
+				= f.password_field	:password, class: "form-control"
+			.form-group
+				= f.label			:password_confirmation, "Confirm Password"
+				= f.password_field	:password_confirmation, class: "form-control"
+			.form-group
+				= f.submit "Сохранить", class: "btn btn-large btn-primary form-control"

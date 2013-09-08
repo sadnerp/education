@@ -1,0 +1,8 @@
+= provide(:title, "Все пользователи")
+h1 Все пользователи
+.row
+	.col-lg-12
+		= will_paginate @users, renderer: BootstrapPagination::Rails, bootstrap: 3
+		table.table
+			= render @users
+		= will_paginate @users, renderer: BootstrapPagination::Rails, bootstrap: 3

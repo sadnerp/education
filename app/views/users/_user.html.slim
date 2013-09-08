@@ -1,0 +1,11 @@
+tr
+	td
+		= link_to gravatar_for(user, cssclass: "media-object", size: 50), user, class: "pull-left"
+	td
+		h4.media-heading = link_to user.name, user
+		= user.email
+	td
+		- if current_user.admin? && !current_user?(user) 
+    		= link_to "Удалить", user, method: :delete, data: { confirm: "You sure?" }
+    	- elsif user.admin
+    		| Администратор

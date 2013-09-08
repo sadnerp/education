@@ -1,13 +1,17 @@
-source 'https://rubygems.org'
-# 6.15
+ source 'https://rubygems.org'
+# 9/2/3 дружелюбная переажресацтя
 gem 'rails', '3.2.13'
 gem 'slim'
 # To use ActiveModel has_secure_password
 gem 'bcrypt-ruby', '3.0.1'
+gem 'will_paginate', '3.0.3'
+# gem 'bootstrap-will_paginate'
+gem 'will_paginate-bootstrap'
 
 group :development, :test do
   gem 'sqlite3'
   gem 'rspec-rails', '2.11.0'
+  gem 'faker', '1.0.1'
 # gem 'guard-rspec', '1.2.1'
 end
 

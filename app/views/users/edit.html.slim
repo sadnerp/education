@@ -9,7 +9,7 @@
 	.col-lg-6
 		h1 Изменить профиль
 		= form_for(@user) do |f|
-			= render 'shared/error_messages'
+			= render 'shared/error_messages', object: f.object
 			.form-group
 				= f.label		:name
 				= f.text_field	:name, class: "form-control"

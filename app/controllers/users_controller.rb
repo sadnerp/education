@@ -12,6 +12,7 @@ class UsersController < ApplicationController
 
   def show
   	@user = User.find(params[:id])
+    @microposts = @user.microposts.paginate(page: params[:page])
   end
 
   def create
@@ -44,15 +45,14 @@ class UsersController < ApplicationController
       render 'edit'
     end
   end
+  
+
+  def feed
+    # Это предварительное решение. См. полную реализацию в "Following users".
+    Micropost
+  end
 
   private
-    def signed_in_user
-      unless signed_in?
-        store_location
-        flash[:danger] = "Please sign in."
-        redirect_to signin_url
-      end
-    end
 
     def correct_user
       @user = User.find(params[:id])

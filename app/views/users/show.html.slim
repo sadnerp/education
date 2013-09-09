@@ -3,5 +3,14 @@
 	aside.col-lg-3
 		section
 			= gravatar_for(@user, size: 150, cssclass: "thumbnail")
-	.col-lg-3
+	.col-lg-6
 		h1 = @user.name
+		- if @user.microposts.any?
+			h3
+				| Сообщения (
+				= @user.microposts.count
+				| )
+
+			ol.microposts
+				= render @microposts
+			= will_paginate @microposts
